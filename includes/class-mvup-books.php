@@ -177,10 +177,6 @@ class MVUP_Books
 
     $this->loader->add_action('wp_enqueue_scripts', $plugin_public, 'enqueue_styles');
 
-    // Custom front Page loader
-    $this->loader->add_filter('page_template', $plugin_public, 'mvup_books_create_page_template');
-    add_shortcode("mvup_books", array($plugin_public, "mvup_books_frontend_page_call"));
-
     $this->loader->add_action('init', $plugin_shortcode, 'register_shortcode');
   }
 
